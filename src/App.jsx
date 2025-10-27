@@ -22,7 +22,6 @@ function App() {
         <Education />
         <Contact />
       </main>
-      <p>NOseque</p>
       <Footer />
     </div>
   );
