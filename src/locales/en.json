@@ -1,0 +1,52 @@
+{
+  "common": {
+    "about": "About Me",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "education": "Education",
+    "languages": "Languages",
+    "frameworks": "Frameworks"
+  },
+  "hero": {
+    "name": "Gerónimo Molero Rodríguez",
+    "role": "Web Developer",
+    "intro": "Passionate about technology and learning, with a unique journey from biology to creating innovative digital solutions.",
+    "cta": "Contact Me"
+  },
+  "aboutMe": {
+    "intro": "My professional journey started in Biology, but my curiosity for technology and how things work led me to discover my true passion: software development. This transition has shaped in me a strong capacity for learning and a problem-solving mindset that I apply in every project.",
+    "teamwork": "I am an assertive developer with strong teamwork skills, always looking for the best solutions to problems and enjoying the collaborative process. Currently, I am focused on mastering the .NET and JavaScript ecosystem, building robust and efficient web applications."
+  },
+  "contact": {
+    "intro": "If you're interested in collaborating or just want to chat, don't hesitate to contact me!",
+    "email": "Email: ",
+    "phone": "Phone: ",
+    "linkedin": "LinkedIn: "
+  },
+  "education": {
+    "item1": {
+      "title": "Higher Degree in Web Development (DAW)",
+      "institution": "IES Sotero Hernández",
+      "duration": "2024 - Present"
+    },
+    "item2": {
+      "title": "Bachelor's Degree in Biology",
+      "institution": "University of Seville",
+      "duration": "2015 - Present (132 credits)"
+    }
+  },
+  "experience": {
+    "intro": "Experience",
+    "item1": {
+      "role": "Software Developer (Internship)",
+      "company": "Origen Corporación Biotech S.L.",
+      "duration": "March 2025 - June 2025",
+      "tasks": [
+        "Developed an internal tool for data management using .NET and C#.",
+        "Collaborated in maintaining and improving the company's main web application.",
+        "Worked with SQL Server for database management."
+      ]
+    }
+  }
+}

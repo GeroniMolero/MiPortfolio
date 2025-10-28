@@ -28,7 +28,7 @@
   content: "";
   position: absolute;
   height: 30px;
-  width: 120px;
+  width: 90px;
   background-color: var(--secondary-color); /* Color del ribbon */
   top: 32px;
   right: -2.5px;

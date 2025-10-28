@@ -1,0 +1,54 @@
+.section{
+    padding: 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills-section{
+    padding: 20px 5%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.skills-section h3{
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.skills-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    min-width: 60px;
+    max-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    p{
+        background-color: var(--text-color);
+        font-weight: 500;
+        color: #222;
+        margin: 0;
+        display: inline;
+        border: solid var(--secondary-color);
+        border-radius: 2000px;
+        padding: 10px;
+    }
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+

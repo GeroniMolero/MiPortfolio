@@ -1,7 +1,6 @@
-// src/components/Hero.jsx
 import React from 'react';
-import miFoto from '../assets/images/fotocv.png'; // <-- Asegúrate de que esta línea esté
-import '../styles/Hero.css'; // Importaremos un CSS específico para el Hero
+import miFoto from '../assets/images/fotocv.png';  // Asegúrate de que la ruta sea correcta
+import '../styles/Hero.css'; // Asegúrate de que este archivo de estilos exista
 
 const Hero = () => {
   return (
@@ -18,7 +17,6 @@ const Hero = () => {
           </p>
           <a href="#contact" className="cta-button">Contactarme</a>
         </div>
-        
       </div>
     </section>
   );

@@ -1,17 +1,19 @@
 // src/components/Header.jsx
 import React from 'react';
-import '../styles/Header.css'
+import '../styles/Header.css';
+import plantamano from "../assets/images/plantamano.png";
 
 const Header = () => {
   return (
     <header className="header">
       <nav>
-        <h2>GM</h2> {/* Tus iniciales, un logo simple */}
+        <h2>GM<img src={plantamano} alt="nada" /></h2> {/* Tus iniciales, un logo simple */}
+         
         <ul>
-          <li><a href="#about">Sobre Mí</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#experience">Experiencia</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <a href="#about"><li>Sobre Mí</li></a>
+          <a href="#skills"><li>Habilidades</li></a>
+          <a href="#experience"><li>Experiencia</li></a>
+          <a href="#contact"><li>Contacto</li></a>
         </ul>
       </nav>
     </header>

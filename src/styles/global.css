@@ -4,7 +4,7 @@
 :root {
   --primary-color: #0a192f;
   --secondary-color: #172a45;
-  --accent-color: #64ffda;
+  --accent-color: #3cd9df;
   --text-color: #ccd6f6;
   --light-text: #8892b0;
 }
@@ -14,6 +14,9 @@ html {
 }
 
 body {
+  background-image: url(../assets/images/biofondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--primary-color);
@@ -45,7 +48,7 @@ a:hover {
 }
 
 /* Estilos comunes para las secciones */
-.section {
+.section:not(#skills){
   padding: 80px 5%;
   max-width: 900px;
   margin: 0 auto;
@@ -59,3 +62,4 @@ main{
 .header { ... }
 .header nav { ... }
  ... y así sucesivamente para cada componente ... */
+ 

@@ -1,0 +1,52 @@
+{
+  "common": {
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "education": "Formación",
+    "languages": "Lenguajes",
+    "frameworks": "Frameworks"
+  },
+  "hero": {
+    "name": "Gerónimo Molero Rodríguez",
+    "role": "Desarrollador Web",
+    "intro": "Apasionado por la tecnología y el aprendizaje, con una trayectoria única que va desde la biología hasta la creación de soluciones digitales innovadoras.",
+    "cta": "Contactarme"
+  },
+  "aboutMe": {
+    "intro": "Mi viaje en el mundo profesional comenzó en la Biología, pero mi curiosidad por la tecnología y cómo las cosas funcionan me llevó a descubrir mi verdadera pasión: el desarrollo de software. Esta transición ha forjado en mí una fuerte capacidad de aprendizaje y una mentalidad resolutiva que aplico en cada proyecto.",
+    "teamwork": "Soy un desarrollador asertivo y con gran capacidad de trabajo en equipo, siempre buscando la mejor solución a los problemas y disfrutando del proceso colaborativo. Actualmente, estoy enfocado en dominar el ecosistema .NET y JavaScript, construyendo aplicaciones web robustas y eficientes."
+  },
+  "contact": {
+    "intro": "Si estás interesado en colaborar o simplemente quieres charlar, ¡no dudes en contactarme!",
+    "email": "Correo electrónico: ",
+    "phone": "Teléfono: ",
+    "linkedin": "LinkedIn: "
+  },
+  "education": {
+    "item1": {
+      "title": "Ciclo Superior de Desarrollo Web (DAW)",
+      "institution": "IES Sotero Hernández",
+      "duration": "2024 - Actualidad"
+    },
+    "item2": {
+      "title": "Grado en Biología",
+      "institution": "Universidad de Sevilla",
+      "duration": "2015 - Actualidad (132 créditos)"
+    }
+  },
+  "experience": {
+    "intro": "Experiencia",
+    "item1": {
+      "role": "Desarrollador de Software (Prácticas)",
+      "company": "Origen Corporación Biotech S.L.",
+      "duration": "Marzo 2025 - Junio 2025",
+      "tasks": [
+        "Desarrollé una herramienta interna para la gestión de datos utilizando .NET y C#.",
+        "Colaboré en el mantenimiento y mejora de la aplicación web principal de la empresa.",
+        "Trabajé con SQL Server para la gestión de la base de datos."
+      ]
+    }
+  }
+}

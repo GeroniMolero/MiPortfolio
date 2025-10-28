@@ -1,5 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
+import algas from "../assets/images/algafondo.png";
+import "../styles/Footer.css"
 
 const Footer = () => {
   return (

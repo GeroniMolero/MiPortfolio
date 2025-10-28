@@ -4,11 +4,13 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
+import Skillsv2 from './components/Skillsv2';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './styles/global.css'; // Asegúrate de que esta ruta y el archivo existan
+import '../src/i18n.js';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
       <main>
         <Hero />
         <AboutMe />
-        <Skills />
+        <Skillsv2 />
         <Experience />
         <Education />
         <Contact />

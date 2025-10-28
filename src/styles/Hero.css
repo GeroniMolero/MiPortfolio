@@ -1,7 +1,6 @@
 /* src/components/Hero.css */
 
 .hero {
-  padding: 100px 5%; /* Más padding en la parte superior */
   min-height: 90vh;
   display: flex;
   align-items: center;
