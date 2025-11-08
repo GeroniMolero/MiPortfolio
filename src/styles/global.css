@@ -2,11 +2,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@700&display=swap');
 
 :root {
+  box-sizing: border-box;
+
+  /* Core color variables. Components should reference these so themes
+     (light/dark/bio) can override them by setting body classes. */
   --primary-color: #0a192f;
   --secondary-color: #172a45;
   --accent-color: #3cd9df;
   --text-color: #ccd6f6;
   --light-text: #8892b0;
+
+  /* Component-specific variables */
+  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.02));
+  --card-border: rgba(255,255,255,0.04);
+  --card-shadow: 0 6px 18px rgba(2,6,23,0.18);
+
+  --button-bg: linear-gradient(135deg, #3cd9df 0%, #7be0c9 100%);
+  --button-text: #0b1626;
+  --button-shadow: 0 6px 14px rgba(46, 204, 188, 0.12);
+  --button-hover-shadow: 0 10px 22px rgba(46, 204, 188, 0.16);
+
+  --icon-bg: rgba(255,255,255,0.95);
+  --fallback-bg: #fff;
+}
+
+/* Make box-sizing sensible across the whole app to avoid width + padding overflow */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Light theme overrides */
+body.light-mode {
+  --primary-color: #f7fafc; /* page background */
+  --secondary-color: #e6eef6; /* sections */
+  --accent-color: #0b7d78; /* accent (teal) */
+  --text-color: #0b1626; /* main text */
+  --light-text: #3b5568; /* secondary text */
+
+  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,245,245,0.98));
+  --card-border: rgba(11,22,38,0.06);
+  --card-shadow: 0 6px 18px rgba(11,22,38,0.06);
+
+  --button-bg: linear-gradient(135deg, #0b7d78 0%, #28a199 100%);
+  --button-text: #ffffff;
+  --button-shadow: 0 6px 14px rgba(11,22,38,0.06);
+
+  --icon-bg: #ffffff;
+  --fallback-bg: #f2f6f8;
+}
+
+/* Dark theme (explicit) */
+body.dark-mode {
+  --primary-color: #071024;
+  --secondary-color: #0f2031;
+  --accent-color: #3cd9df;
+  --text-color: #dbeafe;
+  --light-text: #94a3b8;
+
+  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+  --card-border: rgba(255,255,255,0.03);
+  --card-shadow: 0 6px 18px rgba(2,6,23,0.22);
+
+  --button-bg: linear-gradient(135deg, #2dd4bf 0%, #06b6d4 100%);
+  --button-text: #071024;
+  --button-shadow: 0 6px 14px rgba(2,6,23,0.16);
+
+  --icon-bg: rgba(255,255,255,0.92);
+  --fallback-bg: #ffffff;
 }
 
 html {
@@ -14,7 +76,7 @@ html {
 }
 
 body {
-  background-image: url(../assets/images/biofondo.png);
+  
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -44,7 +106,7 @@ a {
 }
 
 a:hover {
-  color: #fff;
+  color: var(--text-color);
 }
 
 /* Estilos comunes para las secciones */
@@ -54,9 +116,25 @@ a:hover {
   margin: 0 auto;
 }
 
+/* About Me paragraph styling */
+.about-paragraph {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Generic card helper so components can rely on a single look */
+.card-common {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+/* main padding: use responsive horizontal padding to avoid horizontal overflow on small screens */
 main{
-    padding-left: 50px;
-    padding-top: 80px;
+  padding: 80px 5% 0 5%;
 }
 /* Estilos para el Header 
 .header { ... }

@@ -3,11 +3,9 @@ import React from 'react';
 import '../styles/Skills.css'; // Importamos el nuevo archivo CSS
 
 const Skills = () => {
-  const skillsList = [
-    ".NET / C#", "Java", "JS", "Kotlin", "Angular", "React"
-  ];
   const frameworkList = [".NET","Angular","React"]
   const lenguajesList = ["C#","Java","JS","Kotlin"]
+
 
   return (
     <section id="skills" className="section">

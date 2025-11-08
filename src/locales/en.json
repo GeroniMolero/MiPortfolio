@@ -15,8 +15,8 @@
     "cta": "Contact Me"
   },
   "aboutMe": {
-    "intro": "My professional journey started in Biology, but my curiosity for technology and how things work led me to discover my true passion: software development. This transition has shaped in me a strong capacity for learning and a problem-solving mindset that I apply in every project.",
-    "teamwork": "I am an assertive developer with strong teamwork skills, always looking for the best solutions to problems and enjoying the collaborative process. Currently, I am focused on mastering the .NET and JavaScript ecosystem, building robust and efficient web applications."
+    "intro": "My professional journey started in Biology, but my curiosity for technology and how things work led me to discover my true passion: software development. This transition has shaped in me a <1>strong capacity for learning</1> and a <2>problem-solving mindset</2> that I apply in every project.",
+    "teamwork": "I am an <1>assertive</1> developer with <2>strong teamwork skills</2>, always looking for the best solutions to problems and enjoying the collaborative process. Currently, I am focused on mastering the .NET and JavaScript ecosystem, building robust and efficient web applications."
   },
   "contact": {
     "intro": "If you're interested in collaborating or just want to chat, don't hesitate to contact me!",
@@ -48,5 +48,21 @@
         "Worked with SQL Server for database management."
       ]
     }
+  }
+  ,
+  "footer": {
+    "copy": "© {{year}} Gerónimo Molero Rodríguez. All rights reserved."
+  }
+  ,
+  "bio": {
+    "title": "Bio",
+    "summary": "Developer with a background in biology, passionate about applying computational thinking to solve real problems.",
+    "hint": "Toggle the bio theme to see more",
+    "inDevelopment": "This panel is under development. In the future I'll showcase projects and interesting information about my interest in biology here.",
+    "contact": "Contact",
+    "showProgress": "See progress",
+    "modalTitle": "Progress & roadmap",
+    "modalBody": "I am working on adding a showcase of projects, case studies and notes about where biology and software intersect. Check back soon — I will add links, images and small demos here.",
+    "modalClose": "Close"
   }
 }

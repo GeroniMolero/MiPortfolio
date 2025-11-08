@@ -1,18 +1,23 @@
 // src/components/Education.jsx
-// ... (import React)
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 const Education = () =>{
-return(
-<section id="education" className="section">
-  <h2>Formación</h2>
-  <div className="education-item">
-    <h3>Ciclo Superior de Desarrollo Web (DAW)</h3>
-    <p>IES Sotero Hernández | 2024 - Actualidad</p>
-  </div>
-  <div className="education-item">
-    <h3>Grado en Biología</h3>
-    <p>Universidad de Sevilla | 2015 - Actualidad (132 créditos)</p>
-  </div>
-</section>
-)
+  const { t } = useTranslation();
+
+  return(
+    <section id="education" className="section">
+      <h2>{t('common.education')}</h2>
+      <div className="education-item">
+        <h3>{t('education.item1.title')}</h3>
+        <p>{t('education.item1.institution')} | {t('education.item1.duration')}</p>
+      </div>
+      <div className="education-item">
+        <h3>{t('education.item2.title')}</h3>
+        <p>{t('education.item2.institution')} | {t('education.item2.duration')}</p>
+      </div>
+    </section>
+  )
 }
+
 export default Education;

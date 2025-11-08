@@ -1,18 +1,23 @@
 // src/components/Experience.jsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Experience = () => {
+  const { t } = useTranslation();
+  const tasks = t('experience.item1.tasks', { returnObjects: true });
+
   return (
     <section id="experience" className="section">
-      <h2>Experiencia</h2>
+      <h2>{t('common.experience')}</h2>
       <div className="experience-item">
-        <h3>Desarrollador de Software (Prácticas)</h3>
-        <h4>Origen Corporación Biotech S.L. | Marzo 2025 - Mayo 2025</h4>
+        <h3>{t('experience.item1.role')}</h3>
+        <h4>{t('experience.item1.company')} | {t('experience.item1.duration')}</h4>
         <ul>
-          <li><strong>Participación en proyecto del area Bio, desarrollo de endpoints para la gestión de datos usando .NET y C#.</strong></li>
-          <li><strong>Creación de componentes con angular para la biblioteca de la empresa.</strong></li>
-          <li><strong>Refactorifación de proyecto, implementando hoja de estilos.</strong></li>
-          <li><strong>Trabajo con contenedores Docker a partir de un archivo Docker Compose y con PostgreSQL para la gestión de la base de datos.</strong></li>
+          {Array.isArray(tasks) ? tasks.map((task, i) => (
+            <li key={i}><strong>{task}</strong></li>
+          )) : (
+            <li><strong>{t('experience.item1.tasks')}</strong></li>
+          )}
         </ul>
       </div>
     </section>

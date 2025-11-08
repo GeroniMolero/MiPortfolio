@@ -1,0 +1,210 @@
+/*
+  BioTheme.css
+
+  Estilos opcionales inspirados en biología. Este archivo no reemplaza
+  `global.css`; en su lugar se activa añadiendo la clase `bio-theme` al
+  elemento `body` (por ejemplo: document.body.classList.add('bio-theme')).
+
+  Comportamiento:
+  - Añade un panel decorativo fijo a la derecha (patrón/gradiente) que
+    ocupa el espacio vacío de la página.
+  - Reduce el ancho del contenido principal (`.App` / .section) mientras
+    el tema esté activo para que el panel no tape nada.
+  - Está diseñado para ser no intrusivo: el panel es decorativo (pointer-events: none)
+    y se oculta en pantallas pequeñas.
+
+  Para activar el tema desde React puedes añadir al montar la app:
+    document.body.classList.add('bio-theme');
+
+*/
+
+:root {
+  --bio-panel-width: 260px; /* ancho del panel derecho */
+  --bio-accent: rgba(98, 178, 124, 0.95); /* tono "verde biológico" */
+  --bio-accent-2: rgba(45, 130, 90, 0.9);
+}
+
+/* Color variables when bio-theme is active. These override the app's
+   main CSS variables (defined in global.css) so the whole UI adapts. */
+body.bio-theme {
+  /* background and palette */
+  --primary-color: #071823; /* darker teal-ish */
+  --secondary-color: #11332a;
+  --accent-color: #66c09a; /* soft biological green accent */
+  --text-color: #e6f7f0;
+  --light-text: #c7e9d9;
+
+  /* Component-specific overrides to ensure whole UI matches bio palette */
+  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(3,8,10,0.03));
+  --card-border: rgba(255,255,255,0.03);
+  --card-shadow: 0 6px 20px rgba(1,6,8,0.28);
+
+  --button-bg: linear-gradient(135deg, rgba(102,192,154,0.95) 0%, rgba(45,130,90,0.95) 100%);
+  --button-text: #071823;
+  --button-shadow: 0 6px 16px rgba(12,30,22,0.14);
+
+  --icon-bg: rgba(255,255,255,0.92);
+  --fallback-bg: rgba(250,250,250,0.02);
+}
+
+/* Al activar la clase en el body ajustamos el layout */
+body.bio-theme .App {
+  transition: margin-right 300ms ease;
+  margin-right: var(--bio-panel-width);
+}
+
+/* Panel decorativo derecho (usa pseudo-elemento del body) */
+body.bio-theme::after {
+  content: '';
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: var(--bio-panel-width);
+  height: 100vh;
+  z-index: 999; /* por encima del contenido, decorativo */
+  pointer-events: none; /* no bloquea interacción */
+
+  /* mezcla de patrón y degradado para darle aspecto orgánico */
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.04), transparent 10%),
+    linear-gradient(180deg, var(--bio-accent) 0%, var(--bio-accent-2) 100%),
+    url('../assets/images/CodingSnowflakes.png');
+  background-size: cover, cover, 180%;
+  background-blend-mode: overlay, multiply, normal;
+  opacity: 0.98;
+
+  box-shadow: -10px 0 30px rgba(3,8,12,0.45);
+}
+
+/* Opcional: añadir un motivo tipo 'dna' con SVG embed para dar sensación biológica */
+body.bio-theme::before{
+  content: '';
+  position: fixed;
+  right: 18px;
+  top: 40px;
+  width: calc(var(--bio-panel-width) - 36px);
+  height: calc(100vh - 80px);
+  background-image: linear-gradient( to bottom, rgba(255,255,255,0.03), transparent 40% );
+  mask-image: radial-gradient(circle at 10% 10%, rgba(0,0,0,0.6), transparent 30%);
+  opacity: 0.18;
+  transform: rotate(2deg);
+  pointer-events: none;
+}
+
+/* Texto/elementos que quieras colocar dentro del panel pueden usar este contenedor
+   si decides renderizar un elemento real en lugar del pseudo-elemento. */
+.bio-aside {
+  /* hidden by default; only shown when body.bio-theme is active */
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: var(--bio-panel-width);
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+body.bio-theme .bio-aside {
+  display: flex;
+}
+
+.bio-aside .bio-card {
+  pointer-events: auto; /* allow interaction inside the card */
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: var(--text-color);
+  text-align: center;
+  max-width: calc(var(--bio-panel-width) - 32px);
+}
+
+.bio-card .bio-title{
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  color: var(--accent-color);
+}
+
+.bio-card .bio-text{
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--light-text);
+}
+
+.bio-card .bio-small{
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--light-text);
+}
+
+.bio-card .bio-link{
+  color: var(--button-text);
+  background: var(--button-bg);
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* small badge next to the development message */
+.bio-dev { margin-top: 8px; color: var(--light-text); font-size: 0.9rem; }
+.bio-dev .dev-badge { margin-right: 6px; font-size: 1.05rem; vertical-align: middle; }
+
+/* CTA button in the bio card */
+.bio-cta { 
+  background: transparent; 
+  border: 1px solid var(--card-border); 
+  color: var(--button-text); 
+  background: var(--button-bg);
+  padding: 6px 10px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+}
+
+/* Modal styles */
+.bio-modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+.bio-modal{
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  width: min(520px, calc(100% - 40px));
+  max-width: 90%;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+.bio-modal-header{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.bio-modal-header h3{ margin:0; font-size:1.05rem; color:var(--accent-color); }
+.bio-modal-close{ background:transparent; border:0; font-size:1.5rem; color:var(--light-text); cursor:pointer }
+.bio-modal-body{ margin-top:12px; color:var(--light-text); }
+.bio-modal-footer{ margin-top:16px; text-align:right; }
+.bio-modal-action{ background:var(--button-bg); color:var(--button-text); border:0; padding:8px 12px; border-radius:8px; cursor:pointer }
+
+@media (max-width: 900px){
+  .bio-modal{ width: calc(100% - 24px); }
+}
+
+/* Ocultar panel en pantallas pequeñas */
+@media (max-width: 900px) {
+  body.bio-theme .App { margin-right: 0; }
+  body.bio-theme::after, body.bio-theme::before, .bio-aside { display: none; }
+}
+
+/* Ajustes finos para impresión o cuando el usuario quiere todo el ancho */
+@media print {
+  body.bio-theme::after, body.bio-theme::before, .bio-aside { display: none !important; }
+  body.bio-theme .App { margin-right: 0 !important; }
+}

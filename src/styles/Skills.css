@@ -9,19 +9,15 @@
 }
 
 /* --- Estilos de la Tarjeta (adaptados a tu tema) --- */
-:root {
-  --card-bg-color: #f4f5f2; /* Un color claro para que destaque sobre el fondo oscuro */
-}
-
 .card {
   width: min(300px, 100%);
   margin: auto;
-  background-color: var(--card-bg-color);
+  background: var(--card-bg);
   text-align: center;
   border-top-left-radius: 4rem;
-  border: 2px solid var(--card-bg-color);
+  border: 2px solid var(--card-border);
   position: relative;
-  color: var(--primary-color); /* Color de texto por defecto dentro de la tarjeta */
+  color: var(--text-color); /* Color de texto por defecto dentro de la tarjeta */
 }
 
 .card::before {
@@ -44,7 +40,7 @@
 
 .card__title {
   font-weight: 800;
-  color: var(--primary-color); /* Color del título */
+  color: var(--text-color); /* Color del título */
   font-size: 1.25rem;
   margin-block: 1.5rem 0.75rem;
 }
@@ -95,7 +91,7 @@
   display: block;
   width: 84px;
   aspect-ratio: 1/1;
-  background-color: #fff; /* Fondo blanco para la etiqueta */
+  background-color: var(--fallback-bg); /* Fondo para la etiqueta */
   position: relative;
   transform: translateY(-50%);
   border-radius: 50%;
