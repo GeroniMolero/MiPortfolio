@@ -61,7 +61,7 @@ body.bio-theme::after {
   top: 0;
   width: var(--bio-panel-width);
   height: 100vh;
-  z-index: 999; /* por encima del contenido, decorativo */
+  z-index: 800; /* por encima del contenido, decorative but below header/mobile nav */
   pointer-events: none; /* no bloquea interacción */
 
   /* mezcla de patrón y degradado para darle aspecto orgánico */
@@ -105,7 +105,7 @@ body.bio-theme::before{
   justify-content: center;
   padding: 2rem 1rem;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 810;
   pointer-events: none;
 }
 
@@ -122,6 +122,11 @@ body.bio-theme .bio-aside {
   color: var(--text-color);
   text-align: center;
   max-width: calc(var(--bio-panel-width) - 32px);
+  min-width: 180px;
+  z-index: 900; /* ensure visible above decorative pseudo-elements */
+  /* provide a stronger background in bio theme so text contrasts on desktop */
+  background-color: rgba(4,12,14,0.7);
+  backdrop-filter: blur(4px);
 }
 
 .bio-card .bio-title{
@@ -197,11 +202,42 @@ body.bio-theme .bio-aside {
   .bio-modal{ width: calc(100% - 24px); }
 }
 
-/* Ocultar panel en pantallas pequeñas */
+/* En pantallas pequeñas mostramos el contenido del aside como bloque en-flow
+   (colocado en el DOM justo antes del Hero) en lugar de un panel fijo a la derecha.
+   Los pseudo-elementos decorativos se ocultan para ahorrar espacio. */
 @media (max-width: 900px) {
   body.bio-theme .App { margin-right: 0; }
-  body.bio-theme::after, body.bio-theme::before, .bio-aside { display: none; }
+  /* hide decorative fixed panel */
+  body.bio-theme::after, body.bio-theme::before { display: none; }
+
+  /* make the bio-aside render as a normal block above the hero */
+  .bio-aside {
+    display: block !important;
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0.5rem 1rem !important;
+    box-sizing: border-box;
+    pointer-events: auto !important;
+    margin-bottom: 1rem;
+  }
+
+  .bio-aside .bio-card {
+    max-width: 100% !important;
+    min-width: auto !important;
+    width: 100%;
+    box-shadow: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 12px;
+    margin: 0 auto;
+  }
 }
+
+/* Hide bio-aside when explicitly requested (e.g. mobile nav open) */
+body.hide-bio-aside .bio-aside { display: none !important; }
 
 /* Ajustes finos para impresión o cuando el usuario quiere todo el ancho */
 @media print {

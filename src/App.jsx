@@ -25,7 +25,6 @@ function App() {
         <Education />
         <Contact />
       </main>
-      <BioAside />
       <Footer />
     </div>
   );
