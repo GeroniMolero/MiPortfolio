@@ -11,6 +11,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const ref = useRef();
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [mode, setMode] = useState('dark');
 
   useEffect(() => {
@@ -37,6 +38,15 @@ const Header = () => {
     document.addEventListener('click', onClickOutside);
     return () => document.removeEventListener('click', onClickOutside);
   }, []);
+
+  // When mobile nav opens, hide the bio-aside panel to avoid overlap on small screens
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.classList.add('hide-bio-aside');
+    } else {
+      document.body.classList.remove('hide-bio-aside');
+    }
+  }, [mobileOpen]);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -66,7 +76,13 @@ const Header = () => {
       <nav>
         <h2>GM<img src={plantamano} alt="logo" /></h2>
 
-        <ul>
+        <button className="hamburger" aria-label="Toggle menu" aria-expanded={mobileOpen} onClick={() => setMobileOpen(v => !v)}>
+          <span className="hamburger-box">
+            <span className="hamburger-inner" />
+          </span>
+        </button>
+
+        <ul className="desktop-nav">
           <a href="#about"><li>{t('common.about')}</li></a>
           <a href="#skills"><li>{t('common.skills')}</li></a>
           <a href="#experience"><li>{t('common.experience')}</li></a>
@@ -91,6 +107,34 @@ const Header = () => {
               <option value="dark">Oscuro</option>
               <option value="bio">Bio</option>
             </select>
+          </div>
+        </div>
+
+        {/* Mobile nav overlay */}
+        <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`} role="dialog" aria-hidden={!mobileOpen} onClick={() => setMobileOpen(false)}>
+          <div className="mobile-nav-inner" onClick={(e) => e.stopPropagation()}>
+            <button className="mobile-close" aria-label="Close menu" onClick={() => setMobileOpen(false)}>×</button>
+            <nav>
+              <a href="#about" onClick={() => setMobileOpen(false)}>{t('common.about')}</a>
+              <a href="#skills" onClick={() => setMobileOpen(false)}>{t('common.skills')}</a>
+              <a href="#experience" onClick={() => setMobileOpen(false)}>{t('common.experience')}</a>
+              <a href="#contact" onClick={() => setMobileOpen(false)}>{t('common.contact')}</a>
+
+              <div style={{marginTop:16}}>
+                {/* replicate language and mode selector in mobile */}
+                <div className="lang-select-mobile">
+                  <button onClick={() => changeLanguage('es')}>🇪🇸 Español</button>
+                  <button onClick={() => changeLanguage('en')}>🇬🇧 English</button>
+                </div>
+                <div style={{marginTop:8}}>
+                  <select id="theme-mode-mobile" value={mode} onChange={(e) => { handleModeChange(e); setMobileOpen(false); }} aria-label="Select theme mode">
+                    <option value="light">Claro</option>
+                    <option value="dark">Oscuro</option>
+                    <option value="bio">Bio</option>
+                  </select>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
       </nav>
