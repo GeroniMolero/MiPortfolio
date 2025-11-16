@@ -1,0 +1,38 @@
+/* Contenedor general de la farola */
+.farola-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none; /* Para que no interfiera con clicks */
+  z-index: 10;
+}
+
+/* Imagen de la farola */
+.farola-img {
+  display: none;
+  height: 100%; /* ocupa todo el alto del contenedor */
+  width: auto;  /* mantiene proporción */
+  object-fit: cover; /* opcional, asegura que no se deforme */
+}
+
+/* Luz de la farola */
+.farola-light {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px; /* Ancho del haz de luz */
+  height: 100vh;
+  background: linear-gradient(
+    to left,
+    rgba(var(--accent-rgb), 0.3),
+    rgba(var(--accent-rgb), 0)
+  );
+  z-index: 15;
+  pointer-events: none;
+}
+

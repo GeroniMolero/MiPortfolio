@@ -65,10 +65,10 @@ body.bio-theme::after {
   pointer-events: none; /* no bloquea interacción */
 
   /* mezcla de patrón y degradado para darle aspecto orgánico */
-  background-image:
+  /*background-image:
     radial-gradient(circle at 20% 20%, rgba(255,255,255,0.04), transparent 10%),
     linear-gradient(180deg, var(--bio-accent) 0%, var(--bio-accent-2) 100%),
-    url('../assets/images/CodingSnowflakes.png');
+    url('../assets/images/CodingSnowflakes.png');*/
   background-size: cover, cover, 180%;
   background-blend-mode: overlay, multiply, normal;
   opacity: 0.98;
@@ -182,7 +182,7 @@ body.bio-theme .bio-aside {
   z-index: 1200;
 }
 .bio-modal{
-  background: var(--card-bg);
+  background: rgb(7, 7, 43);
   color: var(--text-color);
   border: 1px solid var(--card-border);
   border-radius: 12px;

@@ -21,7 +21,7 @@ const BioAside = () => {
         <p className="bio-text"><Trans i18nKey="bio.summary">Developer with a background in biology, passionate about applying computational thinking to solve real problems.</Trans></p>
 
         {/* Informational 'in development' paragraph with badge */}
-        <p className="bio-dev"><span className="dev-badge" aria-hidden>🛠️</span> {t('bio.inDevelopment', 'This panel is under development. In the future I will showcase projects and interesting information about my interest in biology here.')}</p>
+        <p className="bio-dev"><span className="dev-badge" aria-hidden></span> {t('bio.inDevelopment', 'This panel is under development. In the future I will showcase projects and interesting information about my interest in biology here.')}</p>
 
         <p className="bio-small">{t('bio.hint', 'Toggle the bio theme to see more')}</p>
 

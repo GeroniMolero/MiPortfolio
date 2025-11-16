@@ -11,7 +11,7 @@
   --accent-color: #3cd9df;
   --text-color: #ccd6f6;
   --light-text: #8892b0;
-
+  --accent-rgb: 60, 217, 223;
   /* Component-specific variables */
   --card-bg: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.02));
   --card-border: rgba(255,255,255,0.04);
@@ -24,6 +24,29 @@
 
   --icon-bg: rgba(255,255,255,0.95);
   --fallback-bg: #fff;
+  --font-base: "Inter", system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  --transition: 0.25s ease;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 28px;
+  --space-xl: 48px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-color: #ffffff;
+    --secondary-color: #f0f0f0;
+    --accent-color: #3cd9df; /* o algún color más brillante para la luz */
+    --text-color: #213547;
+    --light-text: #8892b0;
+  }
 }
 
 /* Make box-sizing sensible across the whole app to avoid width + padding overflow */
@@ -78,11 +101,12 @@ html {
 body {
   
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; 
   margin: 0;
-  font-family: 'Roboto', sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
+  line-height: 1.6;
+  font-family: var(--font-base);
   line-height: 1.6;
 }
 
@@ -116,6 +140,7 @@ a:hover {
   margin: 0 auto;
 }
 
+
 /* About Me paragraph styling */
 .about-paragraph {
   margin-bottom: 1rem;
@@ -131,6 +156,8 @@ a:hover {
   border-radius: 12px;
   box-shadow: var(--card-shadow);
 }
+
+
 
 /* main padding: use responsive horizontal padding to avoid horizontal overflow on small screens */
 main{
