@@ -69,6 +69,18 @@ const Header = () => {
     applyMode(next);
   };
 
+  const handleLinkClick = (event, targetId) => {
+    setMobileOpen(false);
+    event.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 100,
+        behavior: 'smooth'
+      });
+    }
+  }
+
   const current = i18n.language || 'es';
 
   return (
@@ -83,9 +95,10 @@ const Header = () => {
         </button>
 
         <ul className="desktop-nav">
-          <a href="#about"><li>{t('common.about')}</li></a>
-          <a href="#skills"><li>{t('common.skills')}</li></a>
-          <a href="#experience"><li>{t('common.experience')}</li></a>
+          <a href="#about" onClick={(e)=> handleLinkClick(e, '#about')}><li>{t('common.about')}</li></a>
+          <a href="#skills" onClick={(e)=> handleLinkClick(e, '#skills')}><li>{t('common.skills')}</li></a>
+          <a href="#experience" onClick={(e)=> handleLinkClick(e, '#experience')}><li>{t('common.experience')}</li></a>
+          <a href="#education" onClick={(e)=> handleLinkClick(e, '#education')}><li>{t('common.education')}</li></a>
           <a href="#contact"><li>{t('common.contact')}</li></a>
         </ul>
 
@@ -118,6 +131,7 @@ const Header = () => {
               <a href="#about" onClick={() => setMobileOpen(false)}>{t('common.about')}</a>
               <a href="#skills" onClick={() => setMobileOpen(false)}>{t('common.skills')}</a>
               <a href="#experience" onClick={() => setMobileOpen(false)}>{t('common.experience')}</a>
+              <a href="#education" onClick={() => setMobileOpen(false)}>{t('common.education')}</a>
               <a href="#contact" onClick={() => setMobileOpen(false)}>{t('common.contact')}</a>
 
               <div style={{marginTop:16}}>
