@@ -98,6 +98,11 @@ img{
   border-radius: 6px;
 }
 
+.opciones{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
 /* Themed select styles for theme/mode selectors (desktop + mobile) */
 .mode-select select,
 #theme-mode,

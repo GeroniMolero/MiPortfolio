@@ -116,9 +116,9 @@ const Header = () => {
           <div className="mode-select">
             <label htmlFor="theme-mode" className="sr-only">Theme mode</label>
             <select id="theme-mode" value={mode} onChange={handleModeChange} aria-label="Select theme mode">
-              <option value="light">Claro</option>
-              <option value="dark">Oscuro</option>
-              <option value="bio">Bio</option>
+              <option className="opciones" value="light">Claro</option>
+              <option className="opciones" value="dark">Oscuro</option>
+              <option className="opciones" value="bio">Bio</option>
             </select>
           </div>
         </div>
