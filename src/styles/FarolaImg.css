@@ -25,14 +25,35 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 450px; /* Ancho del haz de luz */
+  width: 1350px; /* Ancho del haz de luz */
   height: 100vh;
   background: linear-gradient(
     to left,
-    rgba(var(--accent-rgb), 0.3),
+    rgba(var(--accent-rgb), 0.2),
     rgba(var(--accent-rgb), 0)
   );
   z-index: 15;
   pointer-events: none;
+
+  animation: parpadeo 3s infinite ease-in-out;
 }
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 

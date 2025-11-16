@@ -134,12 +134,21 @@ a:hover {
 }
 
 /* Estilos comunes para las secciones */
-.section:not(#skills){
+/* .section:not(#skills){
   padding: 80px 5%;
   max-width: 900px;
   margin: 0 auto;
-}
+} */
 
+.section{
+  padding: 80px 5%;
+  max-width: 900px;
+  border:2px solid var(--accent-color);
+  border-radius:12px;
+  margin-bottom: 60px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
 /* About Me paragraph styling */
 .about-paragraph {
