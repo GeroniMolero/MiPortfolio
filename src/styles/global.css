@@ -11,7 +11,7 @@
   --accent-color: #3cd9df;
   --text-color: #ccd6f6;
   --light-text: #8892b0;
-
+  --accent-rgb: 60, 217, 223;
   /* Component-specific variables */
   --card-bg: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.02));
   --card-border: rgba(255,255,255,0.04);
@@ -37,6 +37,16 @@
   --space-md: 16px;
   --space-lg: 28px;
   --space-xl: 48px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-color: #ffffff;
+    --secondary-color: #f0f0f0;
+    --accent-color: #3cd9df; /* o algún color más brillante para la luz */
+    --text-color: #213547;
+    --light-text: #8892b0;
+  }
 }
 
 /* Make box-sizing sensible across the whole app to avoid width + padding overflow */

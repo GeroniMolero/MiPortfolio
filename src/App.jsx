@@ -12,6 +12,8 @@ import Footer from './components/Footer';
 import './styles/global.css'; // Asegúrate de que esta ruta y el archivo existan
 import '../src/i18n.js';
 import BioAside from './components/BioAside';
+import Farola from './components/Farola';
+import FarolaImg from './components/FarolaImg';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <FarolaImg />
     </div>
   );
 }
