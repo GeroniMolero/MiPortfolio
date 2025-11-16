@@ -14,8 +14,8 @@ const Skillsv2 = () => {
     const languajes = [
         { name: "C#", link: "", image: csharplogo },
         { name: "Java", link: "https://github.com/GeroniMolero/Entorno_Servidor", image: javalogo },
-        { name: "JS", link: "https://github.com/GeroniMolero/ProyectosReact", image: jslogo },
-        { name: "Kotlin", link: "https://github.com/GeroniMolero/ComposePractica", image: kotlinIcon },
+        { name: "JS", link: "https://github.com/GeroniMolero/PeluControl", image: jslogo },
+        { name: "Kotlin", link: "https://github.com/GeroniMolero/Rehabook", image: kotlinIcon },
         { name: "HTML", link: "https://github.com/GeroniMolero/DisenioInterfaces-Tema2", image: html5Icon }
     ];
 
@@ -47,19 +47,19 @@ const Skillsv2 = () => {
                         <div className="card" key={index}>
                             {skill.link ? (
                                 <a className="skill-btn" href={skill.link} target="_blank" rel="noopener noreferrer">
-                                        {skill.image ? (
-                                            <img src={skill.image} alt={`${skill.name} logo`} className="skill-icon" />
-                                        ) : (
-                                                <span className="skill-fallback" aria-hidden>{getInitials(skill.name)}</span>
-                                        )}
-                                        <span>{skill.name}</span>
+                                    {skill.image ? (
+                                        <img src={skill.image} alt={`${skill.name} logo`} className="skill-icon" />
+                                    ) : (
+                                        <span className="skill-fallback" aria-hidden>{getInitials(skill.name)}</span>
+                                    )}
+                                    <span>{skill.name}</span>
                                 </a>
                             ) : (
                                 <button className="skill-btn" type="button" disabled>
                                     {skill.image ? (
                                         <img src={skill.image} alt={`${skill.name} logo`} className="skill-icon" />
                                     ) : (
-                                            <span className="skill-fallback" aria-hidden>{getInitials(skill.name)}</span>
+                                        <span className="skill-fallback" aria-hidden>{getInitials(skill.name)}</span>
                                     )}
                                     <span>{skill.name}</span>
                                 </button>
@@ -68,6 +68,7 @@ const Skillsv2 = () => {
                     ))}
                 </div>
             </div>
+
 
             <div className="skills-section">
                 <h3>{t('common.frameworks')}</h3>

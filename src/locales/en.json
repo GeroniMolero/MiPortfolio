@@ -43,9 +43,9 @@
       "company": "Origen Corporación Biotech S.L.",
       "duration": "March 2025 - June 2025",
       "tasks": [
-        "Developed an internal tool for data management using .NET and C#.",
-        "Collaborated in maintaining and improving the company's main web application.",
-        "Worked with SQL Server for database management."
+        "Development of an internal tool for data management using .NET and C#.",
+        "Maintenance and improvement of a company’s web application.",
+        "Use of SQL Server for database management."
       ]
     }
   }

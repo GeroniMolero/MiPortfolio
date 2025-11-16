@@ -1,88 +1,105 @@
-.section{
+.section {
     padding: 80px 5%;
     max-width: 900px;
     margin: 0 auto;
 }
 
-.skills-section{
+.skills-section {
     padding: 20px 5%;
     max-width: 900px;
     margin: 0 auto;
     margin-bottom: 2rem;
 }
 
-.skills-section h3{
+.skills-section h3 {
     margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    color: var(--primary-text-color);
 }
 
-.skills-row{
+.skills-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.2rem;
+    margin-top: 2rem;
 }
 
-.card{
+.card {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.8rem;
     min-width: 120px;
-    max-width: 260px;
+    max-width: 240px;
     transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
-    /* Use the shared card style from global variables */
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 14px;
     box-shadow: var(--card-shadow);
+    overflow: hidden;
 }
 
-/* New button-like style for skills links */
-.skill-btn{
+.card::before{
+    content: none !important;
+}
+
+.card::after{
+    content: none !important;
+}
+
+.skill-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.8rem;
     width: 100%;
     text-align: center;
-    padding: 10px 12px;
-    border-radius: 999px;
+    padding: 12px 14px;
+    border-radius: 50px;
     border: 0;
     color: var(--button-text);
     background: var(--button-bg);
     font-weight: 700;
     text-decoration: none;
     box-shadow: var(--button-shadow);
-    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease, background-color 0.15s ease;
     cursor: pointer;
+    outline: none;
+    overflow: hidden;
 }
 
-.skill-btn:hover{
+.skill-btn:hover {
     transform: translateY(-4px);
     box-shadow: var(--button-hover-shadow, 0 10px 22px rgba(46, 204, 188, 0.16));
+    background-color: var(--button-hover-bg, #1abc9c);
 }
 
-.skill-btn:active{
-    transform: translateY(-1px) scale(0.99);
+.skill-btn:active {
+    transform: translateY(-1px) scale(0.98);
 }
 
-/* icon inside skill button */
-.skill-icon{
-    width: 28px;
-    height: 28px;
+.skill-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.skill-icon {
+    width: 30px;
+    height: 30px;
     object-fit: contain;
     display: inline-block;
-    /* Normalize appearance: consistent size, padding and background */
     padding: 4px;
-    border-radius: 6px;
+    border-radius: 8px;
     background: var(--icon-bg);
-    box-shadow: 0 3px 8px rgba(2,6,23,0.12);
+    box-shadow: 0 3px 8px rgba(2, 6, 23, 0.12);
+    transition: transform 0.2s ease;
 }
 
-/* Fallback circular initials when no icon image is available */
-.skill-fallback{
-    width: 22px;
+.skill-fallback {
+    width: 28px;
     height: 28px;
     display: inline-flex;
     align-items: center;
@@ -91,45 +108,54 @@
     background: var(--fallback-bg);
     color: var(--button-text);
     font-weight: 700;
-    font-size: 0.75rem;
-    box-shadow: 0 3px 8px rgba(2,6,23,0.08);
+    font-size: 0.85rem;
+    box-shadow: 0 3px 8px rgba(2, 6, 23, 0.08);
+    transition: transform 0.2s ease;
 }
 
-/* Ensure all images inside skill buttons are visually aligned */
-.skill-btn img, .skill-btn .skill-fallback {
+.skill-btn:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+.skill-btn:hover .skill-fallback {
+    transform: scale(1.1);
+}
+
+.skill-btn img,
+.skill-btn .skill-fallback {
     flex-shrink: 0;
 }
 
-/* Make sure icons have consistent spacing on very small screens */
-@media (max-width: 420px) {
-    .skill-icon{ width:24px; height:24px; padding:3px; }
-    .skill-fallback{ height:24px; font-size:0.7rem; }
+@media (max-width: 480px) {
+    .skill-btn {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    .skill-icon {
+        width: 24px;
+        height: 24px;
+        padding: 3px;
+    }
+    .skill-fallback {
+        font-size: 0.75rem;
+    }
 }
 
-.skill-btn[disabled], .skill-btn.disabled{
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-/* Make cards adapt to small screens */
-.card{
-    padding: 0.6rem;
-    max-width: 220px;
-}
-
-@media (max-width: 480px){
-    .skills-row{ gap: 0.6rem; }
-    .skill-btn{ font-size: 0.9rem; padding: 8px 10px; }
-}
-
-.card:hover{
+.card:hover {
     cursor: pointer;
     background-color: var(--secondary-color);
     transform: translateY(-5px) scale(1.06);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
+.card {
+    padding: 0.8rem;
+    max-width: 220px;
+}
 
-
+@media (max-width: 420px) {
+    .skill-btn {
+        width: auto;
+        padding: 8px 10px;
+    }
+}

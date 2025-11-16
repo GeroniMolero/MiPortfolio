@@ -24,6 +24,19 @@
 
   --icon-bg: rgba(255,255,255,0.95);
   --fallback-bg: #fff;
+  --font-base: "Inter", system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  --transition: 0.25s ease;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 28px;
+  --space-xl: 48px;
 }
 
 /* Make box-sizing sensible across the whole app to avoid width + padding overflow */
@@ -78,11 +91,12 @@ html {
 body {
   
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; 
   margin: 0;
-  font-family: 'Roboto', sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
+  line-height: 1.6;
+  font-family: var(--font-base);
   line-height: 1.6;
 }
 
@@ -116,6 +130,7 @@ a:hover {
   margin: 0 auto;
 }
 
+
 /* About Me paragraph styling */
 .about-paragraph {
   margin-bottom: 1rem;
@@ -131,6 +146,8 @@ a:hover {
   border-radius: 12px;
   box-shadow: var(--card-shadow);
 }
+
+
 
 /* main padding: use responsive horizontal padding to avoid horizontal overflow on small screens */
 main{
